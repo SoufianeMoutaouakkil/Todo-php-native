@@ -1,6 +1,18 @@
 <?php
 
 /**
+ * return a table of the paths to json data files
+ */
+function getJsonDataFiles() :array
+{
+    return [
+        "user" => __DIR__ . "/datas/users.json",
+        "task" => __DIR__ . "/datas/tasks.json",
+        "step" => __DIR__ . "/datas/steps.json",
+    ];
+}
+
+/**
  * return a table of the allowed routes
  */
 function getRoutes() :array
