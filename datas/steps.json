@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Buy milk",
+    "description": "Buy 1 gallon of whole milk",
+    "status": "pending",
+    "task_id": 1,
+    "created_at": "2022-03-15 10:00:00",
+    "updated_at": "2022-03-16 12:30:00"
+  },
+  {
+    "id": 2,
+    "title": "Buy bread",
+    "description": "Buy 1 loaf of whole wheat bread",
+    "status": "completed",
+    "task_id": 1,
+    "created_at": "2022-03-15 10:00:00",
+    "updated_at": "2022-03-16 12:30:00"
+  },
+  {
+    "id": 3,
+    "title": "Buy eggs",
+    "description": "Buy 1 dozen of large eggs",
+    "status": "pending",
+    "task_id": 1,
+    "created_at": "2022-03-15 10:00:00",
+    "updated_at": "2022-03-16 12:30:00"
+  },
+  {
+    "id": 4,
+    "title": "Buy cheese",
+    "description": "Buy 1 lb of cheddar cheese",
+    "status": "pending",
+    "task_id": 1,
+    "created_at": "2022-03-15 10:00:00",
+    "updated_at": "2022-03-16 12:30:00"
+  },
+  {
+    "id": 5,
+    "title": "Vacuum floors",
+    "description": "Vacuum all floors in the house",
+    "status": "pending",
+    "task_id": 2,
+    "created_at": "2022-03-20 09:00:00",
+    "updated_at": "2022-03-21 11:30:00"
+  },
+  {
+    "id": 6,
+    "title": "Clean bathroom",
+    "description": "Clean all surfaces and toilet in the bathroom",
+    "status": "completed",
+    "task_id": 2,
+    "created_at": "2022-03-20 09:00:00",
+    "updated_at": "2022-03-21 11:30:00"
+  },
+  {
+    "id": 7,
+    "title": "Dust furniture",
+    "description": "Dust all furniture in the house",
+    "status": "pending",
+    "task_id": 2,
+    "created_at": "2022-03-20 09:00:00",
+    "updated_at": "2022-03-21 11:30:00"
+  }
+]
