@@ -1,5 +1,7 @@
 <?php
 
+require_once "models/json.php";
+
 function home()
 {
     echo __FUNCTION__;
@@ -47,12 +49,16 @@ function deleteProfile()
 
 function getUsers()
 {
-    echo __FUNCTION__;
+    $users = getAll("user");
+    // var_dump($users);die;
+    render("users", ["users" => $users]);
 }
 
 function getTasks()
 {
-    echo __FUNCTION__;
+    $userId = $_SESSION["user_id"] ?? 0;
+    $tasks = getByKeyValue("task", "user_id", $userId);
+    render("tasks", ["tasks" => $tasks, "userId" => $userId]);
 }
 
 function getTasksByUser()
@@ -65,9 +71,11 @@ function getSteps()
     echo __FUNCTION__;
 }
 
-function getUser()
+function getUser(int $id)
 {
-    echo __FUNCTION__;
+    $user = getById("user", $id);
+    $_SESSION["user_id"] = $id;
+    render("user", ["user" => $user, "id" => $id]);
 }
 
 function editUser()
