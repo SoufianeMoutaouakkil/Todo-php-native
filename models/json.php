@@ -11,7 +11,7 @@ function getFilePath(string $entity) :string
     return "";
 }
 
-function getByKeyValue(string $entity, string $key, mixed $value)
+function getByKeyValue(string $entity, string $key, $value)
 {
     $all = getAll($entity);
     $fnc = fn($item)=> $item[$key] == $value;
