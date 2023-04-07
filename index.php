@@ -4,7 +4,7 @@ require_once 'config.php';
 require_once 'functions.php';
 require_once("router.php");
 
-
+session_start();
 $handler = resolveRoute();
 
 if (empty($handler)) {
