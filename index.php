@@ -1,15 +1,19 @@
 <?php
 
-require_once 'config.php';
-require_once 'functions.php';
-require_once("router.php");
+define("APP_PATH", __DIR__);
+require_once "config.php";
+require_once "controllers.php";
+require_once "tools/router.php";
+require_once "tools/tools.php";
+require_once "tools/session.php";
+require_once "tools/authorisation.php";
 
-session_start();
+startSession();
 $handler = resolveRoute();
 
 if (empty($handler)) {
     http_response_code(404);
-    echo 'Page not found.';
+    render("error.404");
 } else {
     call_user_func_array($handler["function"], $handler["params"]);
 }

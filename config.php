@@ -12,9 +12,18 @@ function getJsonDataFiles() :array
     ];
 }
 
-/**
- * return a table of the allowed routes
- */
+function getModelType()
+{
+    $possibleValues = [
+        "json" => "json",
+        "yml" => "yml",
+        "xml" => "xml",
+        "sql" => "sql"
+    ];
+
+    return $possibleValues["json"];
+}
+
 function getRoutes() :array
 {
     return [
@@ -28,10 +37,14 @@ function getRoutes() :array
             "get" => 'getRegister',
             "post" => 'postRegister'
         ],
-        '/profile' => [
-            "get" => 'getProfile',
+        '/profile' => 'showProfile',
+        '/profile/edit' => [
+            "get" => 'getEditProfile',
             "post" => 'editProfile',
-            "delete" => 'deleteProfile',
+        ],
+        '/profile/edit/password' => [
+            "get" => 'getEditPassword',
+            "post" => 'editPassword',
         ],
         '/users' => 'getUsers',
         '/tasks' => 'getTasks',

@@ -10,9 +10,11 @@
 </head>
 
 <body>
+    <?php require_once "navbar.php";?>
     <div class="container mt-5">
         <?= $content ?>
     </div>
+    <?php require_once "footer.php";?>
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

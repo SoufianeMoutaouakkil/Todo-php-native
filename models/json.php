@@ -1,9 +1,9 @@
 <?php
 
 require_once __DIR__ . "/../config.php";
-require_once __DIR__ . "/../tools.php";
+require_once __DIR__ . "/../tools/tools.php";
 
-function getFilePath(string $entity) :string
+function jsonGetFilePath(string $entity) :string
 {
     if (isset(getJsonDataFiles()[$entity]) &&  is_string(getJsonDataFiles()[$entity])) {
         return getJsonDataFiles()[$entity];
@@ -11,37 +11,37 @@ function getFilePath(string $entity) :string
     return "";
 }
 
-function getByKeyValue(string $entity, string $key, $value)
+function jsonGetByKeyValue(string $entity, string $key, $value)
 {
-    $all = getAll($entity);
+    $all = jsonGetAll($entity);
     $fnc = fn($item)=> $item[$key] == $value;
     $targetArr = array_filter($all, $fnc);
     return array_values($targetArr);
 }
 
-function getById(string $entity, int $id)
+function jsonGetById(string $entity, int $id)
 {
-    $all = getAll($entity);
+    $all = jsonGetAll($entity);
     $fnc = fn($item)=> $item["id"] == $id;
     $targetArr = array_filter($all, $fnc);
     return array_values($targetArr)[0] ?? [];
 }
 
-function getAll(string $entity)
+function jsonGetAll(string $entity)
 {
-    $path = getFilePath($entity);
+    $path = jsonGetFilePath($entity);
     $jsonContent = file_get_contents($path);
 
     return json_decode($jsonContent, true);
 }
 
-function editById(string $entity, int $id, array $data)
+function jsonEditById(string $entity, int $id, array $data)
 {
     # To impliment later
 }
 
 function save($entity, $data) {
-    $path = getFilePath($entity);
+    $path = jsonGetFilePath($entity);
     $jsonContent = json_encode($data);
 
     file_put_contents($path, $jsonContent);

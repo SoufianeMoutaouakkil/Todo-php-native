@@ -1,11 +1,8 @@
 <?php
 
-require_once 'config.php';
+require_once APP_PATH . "/config.php";
+require_once APP_PATH . "/tools/session.php";
 
-/**
- * return the path
- * ex : domaine/path?queryString
- */
 function getPath()
 {
     $uri = $_SERVER['REQUEST_URI'];
@@ -21,6 +18,7 @@ function getMethod()
 
 function resolveRoute() :array
 {
+    setupPathHisto();
     $path = getPath();
     $method = getMethod();
     $routes = getRoutes();
@@ -47,4 +45,11 @@ function resolveRoute() :array
     }
 
     return [];
+}
+
+function setupPathHisto()
+{
+    $oldCurrentPath = getSession("current_path", "/");
+    setSession("last_path", $oldCurrentPath);
+    setSession("current_path", getPath());
 }
