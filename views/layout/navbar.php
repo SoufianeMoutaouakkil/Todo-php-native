@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">My ToDo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -7,7 +7,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <?php if (isset($_SESSION['user_id'])) { ?>
+                <?php if (!is_null(getSession('user_id'))) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/profile">
                             Hello <?= $_SESSION['username'] ?>
