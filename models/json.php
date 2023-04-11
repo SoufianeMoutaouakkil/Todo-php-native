@@ -59,7 +59,11 @@ function jsonCreateEntity(string $entity, $data)
 {
     $all = getAll($entity);
     $id = getLastId($all);
+<<<<<<< HEAD
     $data["id"] = ++$id;
+=======
+    $data["id"] = $id++;
+>>>>>>> 4d47dcc6c35143f2f8d97ffbd93949a9626f37eb
     $all[] = $data;
 
     save($entity, $all);
