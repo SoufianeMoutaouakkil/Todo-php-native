@@ -11,7 +11,7 @@
 
 <body>
     <?php require_once "navbar.php";?>
-    <div class="container mt-5">
+    <div class="container my-5 pt-3">
         <?= $content ?>
     </div>
     <?php require_once "footer.php";?>

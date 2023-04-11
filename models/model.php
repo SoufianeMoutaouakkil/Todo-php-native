@@ -33,3 +33,15 @@ function editById(string $entity, int $id, array $data)
     $function = getModelFunction(__FUNCTION__);
     return $function($entity, $id, $data);
 }
+
+function deleteById(string $entity, int $id)
+{
+    $function = getModelFunction("deleteById");
+    return $function($entity, $id);
+}
+
+function createEntity(string $entity, array $data)
+{
+    $function = getModelFunction(__FUNCTION__);
+    return $function($entity, $data);
+}

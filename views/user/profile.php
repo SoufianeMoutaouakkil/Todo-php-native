@@ -29,7 +29,8 @@
     <hr>
     <div class="row">
         <div class="col-sm-12">
-            <a class="btn btn-outline-primary " href="/profile/edit">Edit</a>
+            <a class="btn col-3 btn-outline-primary " href="/profile/edit">Edit your profile</a>
+            <a class="btn col-3 btn-danger " href="/profile/delete">Delete your account</a>
         </div>
     </div>
 </div>
