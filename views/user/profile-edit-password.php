@@ -1,4 +1,9 @@
 <h1 class="display-4 lead mb-5">Edit my profile - change password</h1>
+<?php if (isset($message)) { ?>
+    <div class="alert alert-<?= $message["type"] ?>">
+        <?= $message["body"] ?>
+    </div>
+<?php } ?>
 <form method="post">
     <div class="col-md-8">
         <div class="row mb-3">
@@ -33,7 +38,7 @@
         <hr>
         <div class="row mb-3">
             <div class="col-sm-12">
-                <a class="btn btn-outline-primary" href="/profile/edit/passsword">Save</a>
+                <button type="submit" class="btn btn-outline-success">Save</button>
                 <a class="btn btn-outline-danger" href="/profile/edit">Cancel</a>
             </div>
         </div>

@@ -38,8 +38,18 @@ function dump()
     }
 }
 
-function redirect(string $path)
+function redirect(string $path, int $delai = 0)
 {
-    header("location: " . $path);
+    if ($delai > 0) {
+        $script = "<script>";
+        $script .= "setTimeout(";
+        $script .= "window.location.replace('/'),";
+        $script .= "$delai)";
+        $script = "</script>";
+
+        echo $script;
+    } else {
+        header("location: " . $path);
+    }
     exit;
 }

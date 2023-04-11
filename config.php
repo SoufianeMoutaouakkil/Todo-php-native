@@ -38,6 +38,7 @@ function getRoutes() :array
             "post" => 'postRegister'
         ],
         '/profile' => 'showProfile',
+        '/profile/delete' => 'deleteProfile',
         '/profile/edit' => [
             "get" => 'getEditProfile',
             "post" => 'editProfile',
